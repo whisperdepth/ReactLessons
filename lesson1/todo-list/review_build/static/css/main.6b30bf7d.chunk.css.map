@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.css"],"names":[],"mappings":"AAAA,EACE,qBACF,CAEA,KACE,sCACF,CAEA,OACE,cAAe,CACf,wBAAyB,CACzB,iBACF","file":"main.6b30bf7d.chunk.css","sourcesContent":["* {\n  box-sizing: border-box;\n}\n\nbody {\n  font-family: Arial, Helvetica, sans-serif;\n}\n\n.title {\n  font-size: 24px;\n  text-transform: uppercase;\n  text-align: center;\n}\n"]}
