@@ -1,0 +1,2 @@
+(this.webpackJsonptask4=this.webpackJsonptask4||[]).push([[0],{3:function(e,t,a){e.exports=a(4)},4:function(e,t,a){"use strict";a.r(t);var n=a(0),r=a.n(n),s=a(2),c=a.n(s),i=(a(9),document.querySelector("#root")),l=r.a.createElement("div",{className:"greeting"},r.a.createElement("div",{className:"greeting__title"},"Hello, world!"),r.a.createElement("div",{className:"greeting__text"},"I'm learning React"));c.a.render(l,i)},9:function(e,t,a){}},[[3,1,2]]]);
+//# sourceMappingURL=main.ff7b8bd8.chunk.js.map
