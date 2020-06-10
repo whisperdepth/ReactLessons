@@ -1,6 +1,9 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+  output: {
+    path: `${__dirname}/review_build`,
+  },
   module: {
     rules: [
       {
