@@ -4,8 +4,22 @@ import './styles.css';
 
 const rootElelment = document.querySelector('#root');
 
-const element = (
-    <div>{17}</div>
-);
+const renderSeconds = () => {
+  const seconds = new Date().getSeconds();
 
-ReactDom.render(element, rootElelment);
+  const backgroundColor = seconds % 2 === 0 ? '#fff' : '#000';
+  const color = seconds % 2 === 0 ? '#000' : '#fff';
+  const style = { backgroundColor, color };
+
+  const element = (
+    <div className='seconds' style={style}>
+      {seconds}
+    </div>
+  );
+
+  ReactDom.render(element, rootElelment);
+};
+
+
+
+setInterval(() => renderSeconds(), 1000)
