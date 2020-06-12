@@ -5,8 +5,7 @@ const UserInfo = (props) => {
   return (
     <div className='user-info'>
       <Avatar
-       avatarUrl={props.author.avatarUrl}
-       name={props.author.name}
+      user ={props.author}
       />
       <div className='user-info__name'>{props.author.name}</div>
     </div>
