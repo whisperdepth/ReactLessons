@@ -1,16 +1,5 @@
 import React from 'react';
-/* import getBirthDate from './getBirthDate.js'; */
-
-const getBirthDate = (dateString) => {
-  const formatter = new Intl.DateTimeFormat('en', {
-    year: '2-digit',
-    month: 'short',
-  });
-
-  return `${new Date(dateString).getDate()} ${formatter.format(
-    new Date(dateString)
-  )}`;
-};
+import getBirthDate from './getBirthDate.js';
 
 const Profile = (props) => {
   return (
