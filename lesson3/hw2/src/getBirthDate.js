@@ -4,6 +4,7 @@ export default (dateString) => {
     month: 'short',
   });
 
-  const birthDate = formatter.format(new Date(dateString));
-  return birthDate;
+  return `${new Date(dateString).getDate()} ${formatter.format(
+    new Date(dateString)
+  )}`;
 };
