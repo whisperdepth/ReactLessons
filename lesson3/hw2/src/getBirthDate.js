@@ -1,10 +1,5 @@
-export default (dateString) => {
-  const formatter = new Intl.DateTimeFormat('en', {
-    year: '2-digit',
-    month: 'short',
-  });
+import moment from 'moment';
 
-  return `${new Date(dateString).getDate()} ${formatter.format(
-    new Date(dateString)
-  )}`;
+export default (dateString) => {
+  return moment(new Date(dateString)).format('DD MMM YY');
 };
