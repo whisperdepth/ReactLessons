@@ -11,13 +11,13 @@ class Auth extends React.Component {
     };
   }
 
-  handleLogin = () => {
+  onLogin = () => {
     this.setState({
       isLoggedIn: true,
     });
   };
 
-  handleLogout = () => {
+  onLogout = () => {
     this.setState({
       isLoggedIn: false,
     });
@@ -27,14 +27,10 @@ class Auth extends React.Component {
     return (
       <div className='panel'>
         <Greeting isLoggedIn={this.state.isLoggedIn} />
-        {this.state.isLoggedIn ? (
-          <button className='logout btn' onClick={this.handleLogout}>
-            logout
-          </button>
+        {!this.state.isLoggedIn ? (
+          <Login onLogin={this.onLogin} />
         ) : (
-          <button className='login btn' onClick={this.handleLogin}>
-            Login
-          </button>
+          <Logout onLogout={this.onLogout} />
         )}
       </div>
     );
