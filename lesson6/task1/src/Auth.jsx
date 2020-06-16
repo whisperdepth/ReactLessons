@@ -1,5 +1,7 @@
 import React from 'react';
 import Greeting from './Greeting.jsx';
+import Login from './Login.jsx';
+import Logout from './Logout.jsx';
 
 class Auth extends React.Component {
   constructor(props) {
@@ -11,13 +13,13 @@ class Auth extends React.Component {
 
   handleLogin = () => {
     this.setState({
-      isLoggedIn: (this.isLoggedIn = true),
+      isLoggedIn: true,
     });
   };
 
   handleLogout = () => {
     this.setState({
-      isLoggedIn: (this.isLoggedIn = false),
+      isLoggedIn: false,
     });
   };
 
