@@ -37,7 +37,6 @@ class Auth extends React.Component {
               () =>
                 function () {
                   this.state.showSpinner = false;
-                  console.log(this.state.showSpinner);
                 },
               2000
             )}
