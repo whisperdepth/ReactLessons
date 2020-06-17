@@ -8,6 +8,7 @@ class Auth extends React.Component {
     super(props);
     this.state = {
       isLoggedIn: false,
+      showSpinner: true,
     };
   }
 
@@ -23,13 +24,28 @@ class Auth extends React.Component {
     });
   };
 
+  renderLogOut = () => {
+    return <Spinner display={'inline-block'} size={25} />;
+  };
+
   render() {
     return (
       <>
         {this.state.isLoggedIn ? (
           <>
-            <Spinner size={25}/>
-            <Logout onLogout={this.onLogout} />
+            {setTimeout(
+              () =>
+                function () {
+                  this.state.showSpinner = false;
+                  console.log(this.state.showSpinner);
+                },
+              2000
+            )}
+            {this.state.showSpinner ? (
+              <Spinner size={25} />
+            ) : (
+              <Logout onLogout={this.onLogout} />
+            )}
           </>
         ) : (
           <Login onLogin={this.onLogin} />
