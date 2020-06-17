@@ -10,21 +10,16 @@ class Status extends React.Component {
     };
   }
 
-  onBtnClick = () => {
-    this.setState({
-      isOnline: true,
-    });
-  };
 
   render() {
     return (
-      <div className='status'>
+      <>
         {this.state.isOnline ? (
           <Online />
         ) : (
-          <Offline onBtnClick={this.onBtnClick} />
+          <Offline />
         )}
-      </div>
+      </>
     );
   }
 }

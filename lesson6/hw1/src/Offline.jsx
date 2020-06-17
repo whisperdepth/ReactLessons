@@ -2,12 +2,12 @@ import React from 'react';
 
 const Online = ({ onBtnClick }) => {
   return (
-    <>
+    <div className="status">
       <span className='status__text'>Offline</span>
-      <button onClick={onBtnClick} className='status__btn'>
+      <button className='status__btn'>
         Reconnect
       </button>
-    </>
+    </div>
   );
 };
 
