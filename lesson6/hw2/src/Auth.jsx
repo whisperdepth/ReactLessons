@@ -13,6 +13,13 @@ class Auth extends React.Component {
   }
 
   onLogin = () => {
+    setTimeout(
+      () =>
+        this.setState({
+          showSpinner: false,
+        }),
+      2000
+    );
     this.setState({
       isLoggedIn: true,
     });
@@ -21,6 +28,7 @@ class Auth extends React.Component {
   onLogout = () => {
     this.setState({
       isLoggedIn: false,
+      showSpinner: true,
     });
   };
 
@@ -29,13 +37,6 @@ class Auth extends React.Component {
       <>
         {this.state.isLoggedIn ? (
           <>
-            {setTimeout(
-              () =>
-                function () {
-                  this.state.showSpinner = false;
-                },
-              2000
-            )}
             {this.state.showSpinner ? (
               <Spinner size={25} />
             ) : (
