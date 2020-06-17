@@ -5,22 +5,10 @@ import Offline from './Offline.jsx';
 class Status extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      isOnline: false,
-    };
   }
 
-
   render() {
-    return (
-      <>
-        {this.state.isOnline ? (
-          <Online />
-        ) : (
-          <Offline />
-        )}
-      </>
-    );
+    return <>{this.props.isOnline ? <Online /> : <Offline />}</>;
   }
 }
 
