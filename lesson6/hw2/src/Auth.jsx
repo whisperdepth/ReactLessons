@@ -24,10 +24,6 @@ class Auth extends React.Component {
     });
   };
 
-  renderLogOut = () => {
-    return <Spinner display={'inline-block'} size={25} />;
-  };
-
   render() {
     return (
       <>
