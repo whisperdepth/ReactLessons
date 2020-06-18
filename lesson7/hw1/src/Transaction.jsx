@@ -1,11 +1,11 @@
 import React from 'React';
 import moment from 'moment';
 
-const Transaction = ({ from, to, amount, rate, time }) => {
-  const formatter = new Intl.NumberFormat('en-GB', {
-    style: 'decimal',
-  });
+const formatter = new Intl.NumberFormat('en-GB', {
+  style: 'decimal',
+});
 
+const Transaction = ({ from, to, amount, rate, time }) => {
   return (
     <li className='transaction'>
       <span className='transaction__date'>
