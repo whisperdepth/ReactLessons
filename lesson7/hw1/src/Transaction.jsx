@@ -12,7 +12,7 @@ const Transaction = ({ from, to, amount, rate, time }) => {
         {moment(new Date(time)).format('D MMM')}
       </span>
       <span className='transaction__time'>
-        {moment(new Date(time)).format('HH:mm')}
+        {moment(new Date(time)).format('HH:MM')}
       </span>
       <span className='transaction__assets'>{`${from} → ${to}`}</span>
       <span className='transaction__rate'>{rate}</span>
