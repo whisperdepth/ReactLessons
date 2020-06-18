@@ -1,23 +1,22 @@
 import React from 'React';
 import moment from 'moment';
+
 const formatter = new Intl.NumberFormat('en-GB', {
   style: 'decimal',
 });
 
-const Transaction = ({ transaction }) => {
+const Transaction = ({ from, to, amount, rate, time }) => {
   return (
     <li className='transaction'>
       <span className='transaction__date'>
-        {moment(new Date(transaction.time)).format('D MMM')}
+        {moment(new Date(time)).format('D MMM')}
       </span>
       <span className='transaction__time'>
-        {moment(new Date(transaction.time)).format('hh:mm')}
+        {moment(new Date(time)).format('HH:mm')}
       </span>
-      <span className='transaction__assets'>{`${transaction.from} → ${transaction.to}`}</span>
-      <span className='transaction__rate'>{transaction.rate}</span>
-      <span className='transaction__amount'>
-        {formatter.format(transaction.amount)}
-      </span>
+      <span className='transaction__assets'>{`${from} → ${to}`}</span>
+      <span className='transaction__rate'>{rate}</span>
+      <span className='transaction__amount'>{formatter.format(amount)}</span>
     </li>
   );
 };
