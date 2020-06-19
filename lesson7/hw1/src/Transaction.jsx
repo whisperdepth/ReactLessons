@@ -1,4 +1,4 @@
-import React from 'React';
+import React from 'react';
 import moment from 'moment';
 
 const formatter = new Intl.NumberFormat('en-GB', {
