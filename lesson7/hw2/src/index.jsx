@@ -48,11 +48,6 @@ const users = [
     name: 'Sami',
   },
 
-  {
-    id: 'id-8',
-    age: 95,
-    name: 'Samg',
-  },
 ];
 
 ReactDOM.render(<UsersList users={users} />, rootElement);

@@ -4,7 +4,7 @@ const Pagination = (props) => {
   const isPrevPageAvailable =
     props.itemsPerPage * props.currentPage != props.itemsPerPage;
   const isNextPageAvailable =
-    props.totalItems != props.itemsPerPage * props.currentPage;
+    props.totalItems >= props.itemsPerPage * props.currentPage;
 
   return (
     <div className='pagination'>
