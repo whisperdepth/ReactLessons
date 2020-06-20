@@ -7,8 +7,8 @@ const Pagination = ({
   totalItems,
   itemsPerPage,
 }) => {
-  const isPrevPageAvailable = itemsPerPage * currentPage != itemsPerPage;
-  const isNextPageAvailable = totalItems >= itemsPerPage * currentPage;
+  const isPrevPageAvailable = itemsPerPage * (currentPage + 1) != itemsPerPage;
+  const isNextPageAvailable = totalItems >= itemsPerPage * (currentPage + 1);
 
   return (
     <div className='pagination'>
