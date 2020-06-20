@@ -32,7 +32,7 @@ class UsersList extends React.Component {
     return (
       <div>
         <Pagination
-          currentPage={this.state.currentPage + 1}
+          currentPage={this.state.currentPage}
           itemsPerPage={this.state.itemsPerPage}
           totalItems={this.props.users.length}
           goNext={this.goNext}
