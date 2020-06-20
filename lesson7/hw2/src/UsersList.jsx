@@ -24,6 +24,11 @@ class UsersList extends React.Component {
   };
 
   render() {
+    const from = this.state.currentPage * this.state.itemsPerPage;
+    const to =
+      this.state.itemsPerPage +
+      this.state.currentPage * this.state.itemsPerPage;
+
     return (
       <div>
         <Pagination
@@ -34,15 +39,9 @@ class UsersList extends React.Component {
           goPrev={this.goPrev}
         />
         <ul className='users'>
-          {this.props.users
-            .slice(
-              this.state.currentPage * this.state.itemsPerPage,
-              this.state.itemsPerPage +
-                this.state.currentPage * this.state.itemsPerPage
-            )
-            .map((user) => (
-              <User key={user.id} {...user} />
-            ))}
+          {this.props.users.slice(from, to).map((user) => (
+            <User key={user.id} {...user} />
+          ))}
         </ul>
       </div>
     );
