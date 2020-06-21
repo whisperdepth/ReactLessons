@@ -1,5 +1,4 @@
 import React from 'react';
-
 const Pagination = ({
   goPrev,
   goNext,
@@ -7,20 +6,19 @@ const Pagination = ({
   totalItems,
   itemsPerPage,
 }) => {
-  const isPrevPageAvailable = itemsPerPage * (currentPage + 1) != itemsPerPage;
-  const isNextPageAvailable = totalItems >= itemsPerPage * (currentPage + 1);
-
+  const prevPageAvailable = currentPage > 0;
+  const nextPageAvailable =
+    currentPage < Math.ceil(totalItems / itemsPerPage) - 1;
   return (
     <div className='pagination'>
-      <button disabled={!isPrevPageAvailable} onClick={goPrev} className='btn'>
-        {isPrevPageAvailable ? '←' : null}
+      <button className='btn' onClick={goPrev} disabled={!prevPageAvailable}>
+        {prevPageAvailable && '←'}
       </button>
       <span className='pagination__page'>{currentPage + 1}</span>
-      <button disabled={!isNextPageAvailable} onClick={goNext} className='btn'>
-        {isNextPageAvailable ? '→' : null}
+      <button className='btn' onClick={goNext} disabled={!nextPageAvailable}>
+        {nextPageAvailable && '→'}
       </button>
     </div>
   );
 };
-
 export default Pagination;
