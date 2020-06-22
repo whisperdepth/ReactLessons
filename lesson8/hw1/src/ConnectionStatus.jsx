@@ -13,6 +13,11 @@ class ConnectionStatus extends React.Component {
     window.addEventListener('offline', this.onOffline);
   }
 
+  componentWillUnmount() {
+    window.removeEventListener('online', this.onOnline);
+    window.removeEventListener('offline', this.onOffline);
+  }
+
   onOnline = () => {
     this.setState({
       status: 'online',
@@ -26,7 +31,7 @@ class ConnectionStatus extends React.Component {
   };
 
   render() {
-    if ((this.state.status === 'offline')) {
+    if (this.state.status === 'offline') {
       return <div className='status status_offline'>{this.state.status}</div>;
     }
     return <div className='status'>{this.state.status}</div>;
