@@ -68,7 +68,7 @@ class UserForm extends React.Component {
           >
             <option value='new-york'>New York</option>
             <option value='london'>London</option>
-            <option value='sidney'>Sidney</option>
+            <option value='coconut'>Sidney</option>
             <option value='berlin'>Berlin</option>
           </select>
         </div>
