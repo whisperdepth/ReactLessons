@@ -23,7 +23,7 @@ class UserForm extends React.Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    this.props.createUser(this.state);
+    this.props.onSubmit(this.state);
   };
 
   render() {
