@@ -5,7 +5,7 @@ class UserForm extends React.Component {
     super(props);
     this.state = {
       name: '',
-      student: '',
+      student: false,
       occupation: '',
       about: '',
     };
