@@ -14,14 +14,10 @@ class UserForm extends React.Component {
   onChange = (e) => {
     const { name, value, checked, type } = e.target;
 
-    if (type === 'checkbox') {
-      return this.setState({
-        [name]: checked,
-      });
-    }
+    const val = type === 'checkbox' ? checked : value;
 
     this.setState({
-      [name]: value,
+      [name]: val,
     });
   };
 
