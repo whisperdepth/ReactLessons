@@ -8,11 +8,9 @@ class UsersList extends React.Component {
     filterText: '',
   }
 
-  filteredUsers = () => {
-    return this.props.users.filter((user) =>
+  filteredUsers = () => this.props.users.filter((user) =>
       user.name.toUpperCase().includes(this.state.filterText.toUpperCase())
     );
-  }
   
   onChange = (e) =>{
     this.setState({
