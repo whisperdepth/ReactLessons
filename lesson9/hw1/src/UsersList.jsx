@@ -6,18 +6,18 @@ class UsersList extends React.Component {
 
   state = {
     filterText: '',
-    count: this.props.users.length,
+  }
+
+  filteredUsers = () => {
+    return this.props.users.filter((user) =>
+      user.name.toUpperCase().includes(this.state.filterText.toUpperCase())
+    );
   }
   
   onChange = (e) =>{
     const filterText = e.target.value;
-    const count = this.props.users.filter((user) =>
-      user.name.toUpperCase().includes(filterText.toUpperCase())
-    ).length;
-
     this.setState({
       filterText,
-      count,
     })
   }
 
@@ -26,17 +26,13 @@ class UsersList extends React.Component {
       <div>
         <Filter
           onChange={this.onChange}
-          count={this.state.count}
+          count={this.filteredUsers().length}
           filterText={this.state.filterText}
         />
         <ul>
-          {this.props.users
-            .filter((user) =>
-              user.name.toUpperCase().includes(this.state.filterText.toUpperCase())
-            )
-            .map((user) => (
-              <User key={user.id} name={user.name} age={user.age} />
-            ))}
+          {this.filteredUsers().map((user) => (
+            <User key={user.id} name={user.name} age={user.age} />
+          ))}
         </ul>
       </div>
     );
