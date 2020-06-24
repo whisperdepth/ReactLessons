@@ -2,7 +2,7 @@ import React from 'react';
 
 const Filter = ({ filterText, count, onChange }) => {
 
-    return (
+   return (
         <div className="filter">
             <span className='filter__count'>{count}</span>
             <input value={filterText} onChange={onChange} className='filter__text'/>
