@@ -15,10 +15,9 @@ class UsersList extends React.Component {
   }
   
   onChange = (e) =>{
-    const filterText = e.target.value;
     this.setState({
-      filterText,
-    })
+      filterText: e.target.value,
+    });
   }
 
   render() {
