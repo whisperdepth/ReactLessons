@@ -15,11 +15,11 @@ class UsersList extends React.Component {
     const users = this.props.users.filter((user) =>
       user.name.toUpperCase().includes(filterText.toUpperCase())
     );
-    const countNumber = users.length;
+    const count = users.length;
 
     this.setState({
       filterText,
-      count: countNumber,
+      count,
       users,
     })
   }
