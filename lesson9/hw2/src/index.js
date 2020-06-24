@@ -1,3 +1,5 @@
+/* eslint-disable no-plusplus */
+/* eslint-disable no-use-before-define */
 /* eslint-disable class-methods-use-this */
 /* eslint-disable max-classes-per-file */
 import React from 'react';
@@ -70,7 +72,7 @@ class Game extends React.Component {
     this.setState({
       history: history.concat([
         {
-          squares: squares,
+          squares,
         },
       ]),
       stepNumber: history.length,
@@ -86,7 +88,7 @@ class Game extends React.Component {
   }
 
   render() {
-    const history = this.state.history;
+    const {history} = this.state;
     const current = history[this.state.stepNumber];
     const winner = calculateWinner(current.squares);
 
