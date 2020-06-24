@@ -7,17 +7,20 @@ class UsersList extends React.Component {
   state = {
     filterText: '',
     count: this.props.users.length,
+    users: this.props.users,
   }
   
   onChange = (e) =>{
     const filterText = e.target.value;
-    const countNumber = this.props.users.filter((user) =>
+    const users = this.props.users.filter((user) =>
       user.name.toUpperCase().includes(filterText.toUpperCase())
-    ).length;
+    );
+    const countNumber = users.length;
 
     this.setState({
       filterText,
       count: countNumber,
+      users,
     })
   }
 
@@ -26,7 +29,7 @@ class UsersList extends React.Component {
       <div>
          <Filter onChange={this.onChange} count={this.state.count} filterText={this.state.filterText}/>
          <ul>
-           {this.props.users.map((user) => (
+           {this.state.users.map((user) => (
              <User key={user.id} {...user} />
            ))}
          </ul>
