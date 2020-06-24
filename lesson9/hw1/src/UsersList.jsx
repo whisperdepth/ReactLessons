@@ -30,7 +30,7 @@ class UsersList extends React.Component {
          <Filter onChange={this.onChange} count={this.state.count} filterText={this.state.filterText}/>
          <ul>
            {this.state.users.map((user) => (
-             <User key={user.id} {...user} />
+             <User key={user.id} name={user.name} age={user.age} />
            ))}
          </ul>
       </div>
