@@ -21,10 +21,10 @@ class Page extends React.Component {
   };
 
   render() {
-    const { userData } = this.state;
+    const {firstName, lastName} = this.state;
     return (
       <div className='page'>
-        <h1 className='title'>{`Hello, ${userData.firstName} ${userData.lastName}`}</h1>
+        <h1 className='title'>{`Hello, ${firstName} ${lastName}`}</h1>
         <main className='content'>
           <ShoppingCart userData={this.state.userData} />
           <Profile userData={this.state.userData} onChange={this.onChange} />
