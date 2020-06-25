@@ -21,7 +21,7 @@ class Page extends React.Component {
   };
 
   render() {
-    const {firstName, lastName} = this.state;
+    const {firstName, lastName} = this.state.userData;
     return (
       <div className='page'>
         <h1 className='title'>{`Hello, ${firstName} ${lastName}`}</h1>
