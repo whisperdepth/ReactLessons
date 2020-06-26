@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Dialog = ({ hideDialog, isOpened, children, title }) => {
-    if(!isOpened) return null;
+const Dialog = ({ onClose, isOpen, children, title }) => {
+    if(!isOpen) return null;
     return (
       <div className='dialog'>
         <div className='dialog__heading'>
           <div className='dialog__title'>{title}</div>
-          <button onClick={hideDialog} className='dialog__close-btn'>
+          <button onClick={onClose} className='dialog__close-btn'>
             +
           </button>
         </div>

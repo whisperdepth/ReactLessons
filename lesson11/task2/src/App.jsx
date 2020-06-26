@@ -3,12 +3,12 @@ import Dialog from './Dialog.jsx'
 
 class App extends React.Component {
   state = {
-    isOpened: false,
+    isOpen: false,
   };
 
-  hideDialog = () => this.setState({ isOpened: false });
+  hideDialog = () => this.setState({ isOpen: false });
 
-  showDialog = () => this.setState({ isOpened: true });
+  showDialog = () => this.setState({ isOpen: true });
 
   render() {
     return (
@@ -17,12 +17,13 @@ class App extends React.Component {
           Show
         </button>
         <Dialog
-          hideDialog={this.hideDialog}
-          isOpened={this.state.isOpened}
+          onClose={this.hideDialog}
+          isOpen={this.state.isOpen}
           title='Recommendation'
         >
           <p>
-            Use immutable array methods to work with data. It will help to avoid bugs
+            Use immutable array methods to work with data. It will help to avoid
+            bugs
           </p>
         </Dialog>
       </div>
