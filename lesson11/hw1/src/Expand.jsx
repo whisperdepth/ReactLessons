@@ -12,7 +12,8 @@ class Expand extends React.Component {
       : this.setState({ showContent: true });
 
   render(){
-    let { title, children } = this.props;
+    let { children } = this.props;
+    const { title } = this.props
     if(!this.state.showContent){
       children = null;
     }
