@@ -22,8 +22,7 @@ class App extends React.Component {
           title='Recommendation'
         >
           <p>
-            Use immutable array methods to work with data. It will help to avoid
-            bugs
+            Use immutable array methods to work with data. It will help to avoid bugs
           </p>
         </Dialog>
       </div>
