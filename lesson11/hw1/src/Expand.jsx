@@ -6,11 +6,10 @@ class Expand extends React.Component {
     showContent: false,
   };
 
-  handleToggle = () => {
+  handleToggle = () =>
     this.state.showContent
       ? this.setState({ showContent: false })
       : this.setState({ showContent: true });
-  };
 
   render(){
     let { title, children } = this.props;
