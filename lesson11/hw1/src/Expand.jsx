@@ -13,7 +13,8 @@ class Expand extends React.Component {
 
   render(){
     let { children } = this.props;
-    const { title } = this.props
+    const { title } = this.props;
+    
     if(!this.state.showContent){
       children = null;
     }
