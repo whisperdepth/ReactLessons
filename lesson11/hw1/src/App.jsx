@@ -2,9 +2,7 @@
 import React from 'react';
 import Expand from './Expand.jsx';
 
-class App extends React.Component {
-
-  render() {
+const App = () => {
     return (
       <div className='app'>
         <Expand title='Some title'>
@@ -13,11 +11,8 @@ class App extends React.Component {
             other React features without writing a class.
           </p>
         </Expand>
-      </div>
-      
-    );
-          
-  }
+      </div>     
+    );         
 }
 
 export default App;
