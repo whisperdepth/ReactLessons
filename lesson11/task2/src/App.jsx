@@ -13,9 +13,18 @@ class App extends React.Component {
   render() {
     return (
       <div className='app'>
-        <button className='btn' onClick={this.showDialog}>Show</button>
-        <Dialog hideDialog={this.hideDialog} isOpened={this.state.isOpened} title='some title'>
-          <p>Some text</p>
+        <button className='btn' onClick={this.showDialog}>
+          Show
+        </button>
+        <Dialog
+          hideDialog={this.hideDialog}
+          isOpened={this.state.isOpened}
+          title='Recommendation'
+        >
+          <p>
+            Use immutable array methods to work with data. It will help to avoid
+            bugs
+          </p>
         </Dialog>
       </div>
     );
