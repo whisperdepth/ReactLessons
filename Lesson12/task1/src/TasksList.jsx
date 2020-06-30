@@ -15,7 +15,14 @@ class TasksList extends React.Component {
   };
 
   handleCreate = (text) => {
-     this.setState({tasks: this.state.tasks.push({text, done: false, id: Math.random()})});
+    const { tasks } = this.state;
+    const newTask = {
+      text,
+      done: false,
+      id: Math.random()
+    }
+    const updatedTasks = tasks.push(newTask)
+    this.setState({ tasks: updatedTasks})
      console.log(this.state.tasks);
   }
    
