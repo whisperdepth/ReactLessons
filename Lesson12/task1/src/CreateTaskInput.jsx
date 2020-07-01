@@ -1,29 +1,35 @@
-import React from 'react';
+import React from "react";
 
 class CreateTaskInput extends React.Component {
+  state = {
+    value: "",
+  };
 
-    state = { value: ''}
+  handleChange = (e) => {
+    this.setState({
+      value: e.target.value,
+    });
+  };
 
-    handleChange = (e) => this.setState({ value: e.target.value})
+  handleTaskCreate = () => {
+    this.props.onCreate(this.state.value);
+    this.setState({ value: "" });
+  };
 
-    handleClick = () => this.props.onCreate(this.state.value)
-
-    // eslint-disable-next-line class-methods-use-this
-    render(){
-        return (
-            <div className='create-task'>
-                <input 
-                    value={this.state.value} 
-                    className='create-task__input' 
-                    type="text"
-                    onChange={this.handleChange}
-                />
-                <button className='btn' onClick={this.handleClick}>Create</button>
-            </div>        
-        )
-    }
-
-    
+  render() {
+    return (
+      <div className="create-task">
+        <input
+          value={this.state.value}
+          onChange={this.handleChange}
+          className="create-task__input"
+          type="text"
+        />
+        <button className="btn" onClick={this.handleTaskCreate}>
+          Create
+        </button>
+      </div>
+    );
+  }
 }
-
 export default CreateTaskInput;

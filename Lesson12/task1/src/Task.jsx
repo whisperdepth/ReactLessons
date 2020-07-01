@@ -1,14 +1,21 @@
-import React from 'react';
-import classNames from 'classnames';
+import React from "react";
 
-const Task = ({ done, text}) => {
-    return (
-      <li className={classNames('list-item', {'list-item_done': done})}>
-        <input type='checkbox' className='list-item__checkbox' checked={done} />
-        <span className='list-item__text'>{text}</span>
-        <button className='list-item__delete-btn' />
-      </li>
-    );
-}
+const Task = ({ id, done, text, onChange, onDelete }) => {
+  return (
+    <li className={`list-item ${done ? "list-item_done" : null}`}>
+      <input
+        onChange={() => onChange(id)}
+        checked={done}
+        className="list-item__checkbox"
+        type="checkbox"
+      />
+      <span className="list-item__text">{text}</span>
+      <button
+        onClick={() => onDelete(id)}
+        className="list-item__delete-btn"
+      ></button>
+    </li>
+  );
+};
 
 export default Task;

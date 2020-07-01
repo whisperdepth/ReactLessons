@@ -1,9 +1,9 @@
 import React from 'react';
-import TodoList from './TodoList.jsx'
+import TodoList from './TodoList'
 
 const App = () => {
     return (
-        <TodoList />
+        <TodoList/>
     )
 }
 
