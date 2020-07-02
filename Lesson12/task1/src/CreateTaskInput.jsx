@@ -12,6 +12,7 @@ class CreateTaskInput extends React.Component {
   };
 
   handleTaskCreate = () => {
+    /* if (!this.state.value) return; */
     this.props.onCreate(this.state.value);
     this.setState({ value: "" });
   };
@@ -25,7 +26,7 @@ class CreateTaskInput extends React.Component {
           className="create-task__input"
           type="text"
         />
-        <button className="btn" onClick={this.handleTaskCreate}>
+        <button className="btn create-task__btn" onClick={this.handleTaskCreate}>
           Create
         </button>
       </div>
