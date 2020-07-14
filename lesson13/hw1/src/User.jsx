@@ -8,10 +8,12 @@ class User extends React.Component {
     user: null,
   };
 
-  componentDidMount() {
+  /* componentDidMount() {
     const { userId } = this.props.match.params;
     this.fetchUser(userId);
-  }
+
+    console.log("hello")
+  } */
 
   fetchUser = (userId) => {
     fetch(`${baseUrl}/${userId}`)
