@@ -8,12 +8,17 @@ class User extends React.Component {
     user: null,
   };
 
-  /* componentDidMount() {
+  componentDidMount() {
     const { userId } = this.props.match.params;
     this.fetchUser(userId);
+  }
 
-    console.log("hello")
-  } */
+  shouldComponentUpdate(nextProps) {
+    if (this.props.match.params.userId === nextProps.match.params.userId)
+      return true;
+
+    return false;
+  }
 
   fetchUser = (userId) => {
     fetch(`${baseUrl}/${userId}`)
@@ -26,11 +31,11 @@ class User extends React.Component {
   };
 
   render() {
-    console.log(this.props.match.params.userId)
-    console.log(this.state.user);
     const { user } = this.state;
     if (!user) return null;
     const { avatar_url, name, location } = user;
+    const { userId } = this.props.match.params;
+    this.fetchUser(userId);
 
     return (
       <div className="user">
