@@ -28,7 +28,6 @@ class User extends React.Component {
   }
 
   render() {
-    const { userId } = this.props.match.params;
     const { name, src, location } = this.state;
 
     return (
