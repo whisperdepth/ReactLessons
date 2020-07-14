@@ -19,7 +19,9 @@ const Products = ({ match }) => {
           <span>Select a product please</span>
         </Route>
         
-        <Route path={`${match.url}/:productId`} children={<Product />} />
+        <Route path={`${match.url}/:productId`} >
+          <Product/>
+        </Route>
       </Switch>
     </div>
   );
