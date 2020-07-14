@@ -13,12 +13,6 @@ class User extends React.Component {
     this.fetchUser(userId);
   }
 
-  shouldComponentUpdate(nextProps) {
-    if (this.props.match.params.userId === nextProps.match.params.userId)
-      return true;
-
-    return false;
-  }
 
   fetchUser = (userId) => {
     fetch(`${baseUrl}/${userId}`)
@@ -34,8 +28,7 @@ class User extends React.Component {
     const { user } = this.state;
     if (!user) return null;
     const { avatar_url, name, location } = user;
-    const { userId } = this.props.match.params;
-    this.fetchUser(userId);
+    
 
     return (
       <div className="user">
