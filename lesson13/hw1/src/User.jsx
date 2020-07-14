@@ -5,37 +5,35 @@ const baseUrl = "https://api.github.com/users";
 
 class User extends React.Component {
   state = {
-    name: "",
-    src: "",
-    location: "",
+    user: null,
   };
 
   componentDidMount() {
     const { userId } = this.props.match.params;
 
-    const renderUserData = (userData) => {
-      const { avatar_url, location, name } = userData;
-      this.setState({
-        name,
-        src: avatar_url,
-        location,
-      });
-    };
-
     fetch(`${baseUrl}/${userId}`)
       .then((resonse) => resonse.json())
-      .then((result) => renderUserData(result));
+      .then((result) =>
+        this.setState({
+          user: result,
+        })
+      );
   }
 
   render() {
-    const { name, src, location } = this.state;
+    const { user } = this.state;
+    if (!user) return null;
 
     return (
       <div className="user">
-        <img alt="User Avatar" src={`${src}`} className="user__avatar" />
+        <img
+          alt="User Avatar"
+          src={`${user.avatar_url}`}
+          className="user__avatar"
+        />
         <div className="user__info">
-          <span className="user__name">{name}</span>
-          <span className="user__location">{location}</span>
+          <span className="user__name">{user.name}</span>
+          <span className="user__location">{user.location}</span>
         </div>
       </div>
     );
