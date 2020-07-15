@@ -13,7 +13,6 @@ class User extends React.Component {
     this.fetchUser(userId);
   }
 
-
   fetchUser = (userId) => {
     fetch(`${baseUrl}/${userId}`)
       .then((resonse) => resonse.json())
@@ -28,7 +27,6 @@ class User extends React.Component {
     const { user } = this.state;
     if (!user) return null;
     const { avatar_url, name, location } = user;
-    
 
     return (
       <div className="user">
