@@ -13,6 +13,13 @@ class User extends React.Component {
     this.fetchUser(userId);
   }
 
+
+  componentDidUpdate(prevProps){
+    const { userId } = this.props.match.params;
+    if(userId !== prevProps.match.params.userId)
+    this.fetchUser(userId);
+  }
+
   fetchUser = (userId) => {
     fetch(`${baseUrl}/${userId}`)
       .then((resonse) => resonse.json())
