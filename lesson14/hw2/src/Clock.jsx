@@ -13,7 +13,9 @@ const Clock = ({ offset, location }) => {
       setTime(moment(getTimeWithOffset(offset)).format("h:mm:ss A"));
     }, 1000);
 
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+    };
   }, [offset, location]);
 
   return (
