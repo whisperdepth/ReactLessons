@@ -14,7 +14,7 @@ describe("Counter", () => {
     const wrappedComponent = shallow(<Counter />);
     const mockOnClick = jest.fn(() => {
       wrappedComponent.setState({
-        counter: 1,
+        counter: wrappedComponent.state().counter + 1,
       });
     });
 
@@ -27,7 +27,7 @@ describe("Counter", () => {
     const wrappedComponent = shallow(<Counter />);
     const mockOnClick = jest.fn(() => {
       wrappedComponent.setState({
-        counter: -1,
+        counter: wrappedComponent.state().counter -1,
       });
     });
 
