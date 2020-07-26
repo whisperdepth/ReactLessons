@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 import React, { Component } from "react";
-import { getUsersList } from "./usersGateway";
+import { getUserData } from "./usersGateway";
 
 class User extends Component {
   state = {
@@ -8,7 +8,7 @@ class User extends Component {
   };
 
   componentDidMount() {
-    getUsersList().then((userData) =>
+    getUserData().then((userData) =>
       this.setState({
         userData,
       })
