@@ -13,6 +13,6 @@ describe("User", () => {
   it("should render correct age", () => {
     const wrappedComponent = shallow(<User age={23} />);
 
-    expect(wrappedComponent.find(".user").text()).toEqual('23');
+    expect(wrappedComponent.find(".user").text()).toEqual('John Doe');
   });
 });
