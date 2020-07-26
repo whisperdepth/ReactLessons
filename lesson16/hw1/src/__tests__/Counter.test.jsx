@@ -2,7 +2,6 @@ import React from "react";
 import { shallow } from "enzyme";
 import Counter from "../Counter.jsx";
 
-
 describe("Counter", () => {
   it("start value of the counter should be 0", () => {
     const wrappedComponent = shallow(<Counter />);
@@ -27,7 +26,7 @@ describe("Counter", () => {
     const wrappedComponent = shallow(<Counter />);
     const mockOnClick = jest.fn(() => {
       wrappedComponent.setState({
-        counter: wrappedComponent.state().counter -1,
+        counter: wrappedComponent.state().counter - 1,
       });
     });
 

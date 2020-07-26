@@ -12,6 +12,6 @@ describe("Greeting", () => {
   it("should display guest greeting if user is not logged in", () => {
     const wrappedComponent = shallow(<Greeting isLoggedIn={false} />);
 
-    expect(wrappedComponent.find("GuestGreeting").exists()).toBeTruthy();
+    expect(wrappedComponent.find("UserGreeting").exists()).toBeTruthy();
   });
 });
