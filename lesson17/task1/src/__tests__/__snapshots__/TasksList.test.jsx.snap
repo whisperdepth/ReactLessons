@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TasksList /> should display sorted tasks 1`] = `
+<div
+  className="todo-list"
+>
+  <CreateTaskInput
+    onCreate={[Function]}
+  />
+  <ul
+    className="list"
+  >
+    <Task
+      done={false}
+      id="2"
+      key="2"
+      onChange={[Function]}
+      onDelete={[Function]}
+      text="task2"
+    />
+    <Task
+      done={true}
+      id="1"
+      key="1"
+      onChange={[Function]}
+      onDelete={[Function]}
+      text="task1"
+    />
+    <Task
+      done={true}
+      id="3"
+      key="3"
+      onChange={[Function]}
+      onDelete={[Function]}
+      text="task3"
+    />
+  </ul>
+</div>
+`;
